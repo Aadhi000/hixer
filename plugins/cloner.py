@@ -164,7 +164,7 @@ async def cloned_count(client, message):
 
         await message.reply_text(f"{count} bots have been cloned:\n\n{bot_usernames_text}")
         
-        @Client.on_message(filters.command(["removebot"]) & filters.user(ADMINS))
+@Client.on_message(filters.command(["removebot"]) & filters.user(ADMINS))
 
 async def remove_bot(client, message):
 
