@@ -18,10 +18,6 @@ from database.users_chats_db import db
 from bs4 import BeautifulSoup
 import requests
 import aiohttp
-import asyncio
-
-await asyncio.sleep(1)  # Retry after 1 second
-await socket.send(data)
 
 
 logger = logging.getLogger(__name__)
