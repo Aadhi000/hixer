@@ -285,6 +285,10 @@ async def next_page(bot, query):
         pass
     await query.answer()
 
+if query.message.reply_to_message:
+    movies = SPELL_CHECK.get(query.message.reply_to_message.id)
+else:
+    movies = None
 
 @Client.on_callback_query(filters.regex(r"^spol"))
 async def advantage_spoll_choker(bot, query):
