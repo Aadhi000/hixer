@@ -313,14 +313,14 @@ async def advantage_spoll_choker(bot, query):
                 if query.message.text != script.MVE_NT_FND:            
                     from pyrogram.errors import MessageNotModified
                     try:
-                    new_content = script.MVE_NT_FND  # The new message content
-                    current_content = query.message.text  # Get the current message content
-                    if new_content != current_content:
-                        await query.message.edit(new_content)
-except MessageNotModified:
-print("Skipping edit: Message content is the same.")
-except Exception as e:
-print(f"Unexpected error: {e}")
+                        new_content = script.MVE_NT_FND  # The new message content
+                        current_content = query.message.text  # Get the current message content
+                        if new_content != current_content:
+                            await query.message.edit(new_content)
+                    except MessageNotModified:
+                        print("Skipping edit: Message content is the same.")  # Debugging log
+                    except Exception as e:
+                        print(f"Unexpected error: {e}")  # Log any other errors
 await asyncio.sleep(10)
 await k.delete()
 
